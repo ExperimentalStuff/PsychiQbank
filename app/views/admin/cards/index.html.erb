@@ -1,9 +1,29 @@
-#admin::index.html.erb
+<h2> Cards list</h2>
 
-<% @cards.each do |card| %>
-	<h3> <%= card.qtest  %> </h3>
+<div class="pull-right" style="padding-bottom: 20px;">
+	<%= link_to "新增題目", '#', class: "btn btn-primary btn-sm" %>
+</div>
 
-	<p> card number: <%= card.id %></p>
-	<p> card content: <%= card.fulltext %></p>
-
-<% end %>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Card quiz</th>
+			<th>Card answer</th>
+			<th width="100">Options</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @cards.each do |card| %>
+			<tr>
+				<td><%= card.id %></td>
+				<td><%= card.qtest %></td>
+				<td><%= card.fulltext %></td>
+				<td>
+					<%= link_to "Edit", '#', class: "btn btn-xs btn-info" %>
+					<%= link_to "Delete", '#', method: :delete, class: "btn btn-xs btn-danger", data: {confirm: "Are you sure?"} %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
