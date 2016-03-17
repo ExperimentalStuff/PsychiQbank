@@ -1,7 +1,7 @@
 class Admin::CardsController < ApplicationController
 
 	def index
-		@cards = Card.all
+		@cards = Card.page(params[:page])
 	end
 
 	def show
