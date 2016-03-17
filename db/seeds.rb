@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+100.times do |x|
+	Card.create(fulltext: "this is card number #{x}", qtest: "this is q number #{x}")
+end
