@@ -4,5 +4,12 @@ class Admin::CardsController < ApplicationController
 		@cards = Card.all
 	end
 
+	def show
+		@card = Card.find(params[:id])
+	end
+
 	private
+	def card_params
+		params.require(:card).permit(:tags,:fulltext,:qtest)
+	end
 end

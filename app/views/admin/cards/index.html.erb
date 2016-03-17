@@ -1,1 +1,9 @@
 #admin::index.html.erb
+
+<% @cards.each do |card| %>
+	<h3> <%= card.qtest  %> </h3>
+
+	<p> card number: <%= card.id %></p>
+	<p> card content: <%= card.fulltext %></p>
+
+<% end %>
