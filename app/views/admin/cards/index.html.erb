@@ -21,7 +21,7 @@
 	<tbody>
 		<% @cards.each do |card| %>
 			<tr>
-				<td><%= card.id %></td>
+				<td><%= link_to card.id, admin_card_path(card) %></td>
 				<td><%= card.qtest %></td>
 				<td><%= card.fulltext %></td>
 				<td>
