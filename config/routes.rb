@@ -46,9 +46,13 @@ Rails.application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
+  root 'admin/cards#index'
+
   namespace :admin do
     resources :cards
   end
+
+  get "search/index"
 
   # Example resource route within a namespace:
   #   namespace :admin do

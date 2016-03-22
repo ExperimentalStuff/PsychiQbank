@@ -1,11 +1,21 @@
-<h2> Cards list</h2>
+<h3>搜尋題庫</h3>
 
-<div class="pull-right" style="padding-bottom: 20px;">
-	<%= link_to "新增題目", '#', class: "btn btn-primary btn-sm" %>
-</div>
+<%= form_tag search_index_path, method: :get do %>
+
+	<label for="quiz">搜尋題目內容</label>	
+	<%= text_field_tag :quiz, params[:quiz] %>
+	</br>
+	<label for="tag">搜尋題目標籤</label>	
+	<%= text_field_tag :tag, params[:tag] %>
+
+	<%= submit_tag "Search", name: nil %>
+
+<% end %>
+<p>eg. AFF ANX SCH SCZ PHA NEU SOC COM FOR ..</p>
 
 
 <% if @cards %>
+
 	<div class="text-center">
 		<%= paginate @cards %>
 	</div>
