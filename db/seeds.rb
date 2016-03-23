@@ -14,3 +14,5 @@
 		Card.create(fulltext: "this is card number #{x}", qtest: "this is q number #{x}", tags: "104 PHA PSY")
 	end
 end
+
+User.create(email: "test@test.com", password: "12345678", password_confirmation: "12345678", is_admin: true)
