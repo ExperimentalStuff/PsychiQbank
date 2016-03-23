@@ -47,7 +47,9 @@ Rails.application.routes.draw do
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
-  root 'admin/cards#index'
+  root 'cards#index'
+
+  resources :cards
 
   namespace :admin do
     resources :cards

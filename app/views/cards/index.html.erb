@@ -1,0 +1,37 @@
+<h2> Cards list</h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+	<%= link_to "新增題目", '#', class: "btn btn-primary btn-sm" %>
+</div>
+
+
+<% if @cards %>
+	<div class="text-center">
+		<%= paginate @cards %>
+	</div>
+
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Card quiz</th>
+				<th>Card answer</th>
+				<th>tags</th>
+				<th width="100">Options</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @cards.each do |card| %>
+				<tr>
+					<td><%= link_to card.id, admin_card_path(card) %></td>
+					<td><%= card.qtest %></td>
+					<td><%= card.fulltext %></td>
+					<td><%= card.tags %></td>
+					<td>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

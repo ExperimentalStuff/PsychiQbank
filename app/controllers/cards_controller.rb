@@ -1,8 +1,4 @@
-class Admin::CardsController < ApplicationController
-
-	before_action :authenticate_user!
-	before_action :admin_required
-
+class CardsController < ApplicationController
 	def index
 		@cards = Card.page(params[:page])
 	end
