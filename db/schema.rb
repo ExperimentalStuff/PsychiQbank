@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324034714) do
+ActiveRecord::Schema.define(version: 20160324113003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20160324034714) do
 
   add_index "cards", ["fulltext"], name: "index_cards_on_fulltext", using: :btree
   add_index "cards", ["tags"], name: "index_cards_on_tags", using: :btree
+
+  create_table "examcards", force: :cascade do |t|
+    t.integer  "exam_id"
+    t.integer  "card_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "examcards", ["card_id"], name: "index_examcards_on_card_id", using: :btree
+  add_index "examcards", ["exam_id"], name: "index_examcards_on_exam_id", using: :btree
 
   create_table "exams", force: :cascade do |t|
     t.text     "title"
