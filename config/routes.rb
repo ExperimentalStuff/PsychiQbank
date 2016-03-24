@@ -50,10 +50,12 @@ Rails.application.routes.draw do
   root 'cards#index'
 
   resources :cards
+  resources :exams
 
   namespace :admin do
     resources :cards
   end
+
 
   get "search/index"
 

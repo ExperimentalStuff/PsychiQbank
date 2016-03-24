@@ -1,0 +1,25 @@
+<h2> My exams </h2>
+
+<% if @exams.length == 0 %>
+	<%= link_to "Generate my exams", "#", class: "btn btn-primary btn-danger text-center" %>
+<% else %>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Test title</th>
+				<th>Card numbers</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @exams.each do |exam| %>
+				<tr>
+					<td><%= exam.id %></td>
+					<td><%= exam.title %></td>
+					<td><%= exam.cards.length %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+<% end %>
