@@ -13,10 +13,15 @@ class ExamsController < ApplicationController
 		end
 	end
 
-	def update
+	def show
+		@exam = current_user.exams.find(params[:id])
+		@cards = @exam.cards
 	end
 
 	def destroy
+		@exam = current_user.exams.find(params[:id]).destroy
+
+		redirect_to exams_path
 	end
 
 	private
