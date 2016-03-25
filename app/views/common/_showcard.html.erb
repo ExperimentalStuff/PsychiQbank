@@ -1,14 +1,19 @@
-<div class="row quiz">
+
+<% if @card %>
+	<div class="row quiz">
 
 	<%= @card.qtest %>
-	
-</div>
+		
+	</div>
 
-<div class="row answer is_hidden">
-	
-	<%= @card.fulltext %>
-</div>
+	<div class="row answer is_hidden">
+		
+		<%= @card.fulltext %>
+	</div>
 
-<span class="mydivider"></span>
+	<span class="mydivider"></span>
 
-<button class="btn btn-primary btn-danger text-center showans">Show answer</button>
+	<button class="btn btn-primary btn-danger text-center showans">Show answer</button>
+<% else %>
+	<p> No card exists here!</p>
+<% end %>

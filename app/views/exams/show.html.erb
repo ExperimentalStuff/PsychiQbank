@@ -1,1 +1,7 @@
 <h2><%= @exam.title %></h2>
+
+<% if @cards %>
+	<%= paginate @cards %>
+<% end %>
+
+<%= render "common/showcard" %>
